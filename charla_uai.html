@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Formación en IA para empresas - LSE FIUBA - UIA</title>
+
+  <link rel="stylesheet" href="reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ===================== TOKENS ===================== */
+    :root {
+      --navy: #0B1F3A;
+      --navy-2: #13305A;
+      --blue: #1FA2D6;
+      --amber: #F2A541;
+      --bg: #F7F8FA;
+      --surface: #FFFFFF;
+      --ink: #1A2433;
+      --muted: #5B6779;
+      --line: #E2E6EC;
+      --heading: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      --body: 'Inter', 'Segoe UI', Arial, sans-serif;
+    }
+
+    /* ===================== BASE ===================== */
+    .reveal-viewport {
+      background: var(--bg);
+    }
+
+    .reveal {
+      font-family: var(--body);
+      font-size: 26px;
+      color: var(--ink);
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      height: 100%;
+      padding: 56px 72px 0 72px !important;
+      box-sizing: border-box;
+    }
+
+    .reveal h1,
+    .reveal h2,
+    .reveal h3 {
+      font-family: var(--heading);
+      color: var(--navy);
+      text-transform: none;
+      letter-spacing: -0.01em;
+      line-height: 1.12;
+      margin: 0;
+    }
+
+    .reveal h2 {
+      font-size: 46px;
+      font-weight: 800;
+      max-width: 1140px;
+    }
+
+    .reveal h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .reveal p {
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    .reveal a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .reveal strong {
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .reveal ul {
+      margin: 0;
+      padding-left: 1.1em;
+      display: block;
+    }
+
+    .reveal li {
+      margin: 0 0 8px 0;
+      line-height: 1.4;
+    }
+
+    .reveal li::marker {
+      color: var(--blue);
+    }
+
+    /* ===================== COMPONENTES ===================== */
+    .kicker {
+      font-family: var(--heading);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+
+    .lead {
+      font-size: 26px;
+      color: var(--muted);
+      margin-top: 14px !important;
+      max-width: 1120px;
+    }
+
+    .rule {
+      width: 64px;
+      height: 5px;
+      background: var(--amber);
+      border-radius: 3px;
+      margin: 22px 0 0 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 22px;
+      margin-top: 34px;
+    }
+
+    .g3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .g4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px 26px;
+      font-size: 21px;
+      color: var(--ink);
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .card .num {
+      font-family: var(--heading);
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--blue);
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .card.dark {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+
+    .card.dark h3,
+    .card.dark strong {
+      color: #fff;
+    }
+
+    .card.dark p,
+    .card.dark li {
+      color: #C9D4E3;
+    }
+
+    .compact .card {
+      padding: 18px 22px;
+    }
+
+    .compact .stat {
+      font-size: 46px;
+    }
+
+    .compact .reveal li,
+    .compact li {
+      margin-bottom: 4px;
+    }
+
+    .stat {
+      font-family: var(--heading);
+      font-weight: 800;
+      font-size: 54px;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 18px;
+      color: var(--muted);
+      margin-top: 8px !important;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--amber);
+      color: var(--navy);
+      font-family: var(--heading);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .chip {
+      display: inline-block;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 999px;
+      padding: 6px 14px;
+      margin: 0 8px 10px 0;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .reveal a.chip:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .url {
+      display: block;
+      margin-top: 26px;
+      font-size: 20px;
+      color: var(--muted);
+    }
+
+    .url a {
+      font-size: 22px;
+    }
+
+    .shot {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 40px rgba(11, 31, 58, 0.14);
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      margin: 0;
+    }
+
+    /* Recorrido DIIAA */
+    .path {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .path div {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 19px;
+      color: #E6ECF4;
+    }
+
+    .path span {
+      flex: 0 0 auto;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--navy-2);
+      color: var(--amber);
+      font-family: var(--heading);
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Flujo del Programa de Vinculación */
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 34px;
+      position: relative;
+    }
+
+    .flow .step {
+      padding-right: 26px;
+      line-height: 1.4;
+      font-size: 20px;
+      color: var(--muted);
+    }
+
+    .flow .dot {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-family: var(--heading);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .flow::before {
+      content: "";
+      position: absolute;
+      top: 21px;
+      left: 22px;
+      right: 25%;
+      height: 2px;
+      background: var(--line);
+    }
+
+    .flow .step strong {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 4px;
+    }
+
+    /* ===================== SLIDES OSCURAS ===================== */
+    .reveal section.dark-slide h1,
+    .reveal section.dark-slide h2,
+    .reveal section.dark-slide h3,
+    .reveal section.dark-slide strong {
+      color: #fff;
+    }
+
+    .reveal section.dark-slide p {
+      color: #C9D4E3;
+    }
+
+    .cover-title {
+      font-size: 64px !important;
+      font-weight: 800;
+      max-width: 900px !important;
+      margin-top: 90px !important;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 22px;
+      margin-top: 34px;
+    }
+
+    .contact-row .card {
+      padding: 16px 24px;
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .contact-row .card p {
+      font-size: 19px;
+    }
+
+    .contact-row .card .num {
+      color: var(--amber);
+    }
+
+    .dark-logos {
+      position: absolute;
+      left: 72px;
+      bottom: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 26px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px 20px;
+    }
+
+    .dark-logos img {
+      height: 40px;
+      width: auto;
+      margin: 0;
+    }
+
+    .links {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 6px 40px;
+      white-space: nowrap;
+      font-size: 19px;
+      color: #C9D4E3;
+    }
+
+    .links a {
+      color: #7FD0F0;
+    }
+
+    /* ===================== PIE ===================== */
+    #brandbar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      box-sizing: border-box;
+      background: #fff;
+      border-top: 1px solid var(--line);
+      font-family: var(--body);
+      font-size: 14px;
+      color: var(--muted);
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    #brandbar .logos {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    #brandbar img {
+      height: 38px;
+      width: auto;
+    }
+
+    .reveal .progress {
+      color: var(--amber);
+      height: 4px;
+      z-index: 11;
+    }
+
+    .reveal .slide-number {
+      background: transparent;
+      color: var(--muted);
+      font-family: var(--body);
+      font-size: 14px;
+      bottom: 22px !important;
+      right: 40px !important;
+      z-index: 12;
+    }
+
+    .reveal .controls {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+      <!-- ========================= 1. CARÁTULA ========================= -->
+      <section class="dark-slide" data-background-color="#0B1F3A">
+        <div class="kicker" style="color: var(--amber);">UIA · Departamento de Educación, Tecnología e Innovación
+          Productiva</div>
+        <h1 class="cover-title">Formación en Inteligencia Artificial para empresas</h1>
+        <div class="rule"></div>
+        <p style="font-size: 26px; margin-top: 28px;">Posgrados del Laboratorio de Sistemas Embebidos<br>Facultad de
+          Ingeniería · Universidad de Buenos Aires</p>
+        <p style="font-size: 20px; margin-top: 40px;">Federico G. Zacchigna · Coordinación Académica de IA<br>20 de
+          octubre de 2026</p>
+        <div class="dark-logos"><img src="images/logo-fiuba.png" alt="FIUBA"><img src="images/LSE-logo.png"
+            alt="Laboratorio de Sistemas Embebidos"></div>
+        <aside class="notes">
+          Presentación personal. En 5 minutos: quiénes somos, qué nos diferencia y qué le podemos ofrecer a las
+          empresas.
+        </aside>
+      </section>
+
+
+      <!-- ========================= 2. QUIÉNES SOMOS ========================= -->
+      <section>
+        <div class="kicker">01 · Quiénes somos</div>
+        <h2 style="font-size: 42px;">El posgrado en IA más grande del país. Y es UBA.</h2>
+
+        <div class="grid g4 compact" style="margin-top: 26px;">
+          <div class="card">
+            <div class="stat">40</div>
+            <p class="stat-label">cohortes de IA desde 2020</p>
+          </div>
+          <div class="card">
+            <div class="stat">+650</div>
+            <p class="stat-label">inscriptos en IA</p>
+          </div>
+          <div class="card">
+            <div class="stat">+150</div>
+            <p class="stat-label">trabajos finales de IA</p>
+          </div>
+          <div class="card" style="border-color: var(--amber); border-width: 2px;">
+            <div class="stat" style="color: var(--blue);">UBA</div>
+            <p class="stat-label">títulos oficiales de la Universidad de Buenos Aires</p>
+          </div>
+        </div>
+
+        <div class="grid compact" style="grid-template-columns: 1.6fr 1fr; margin-top: 18px;">
+          <div class="card">
+            <h3>Oferta en Inteligencia Artificial</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px;">
+              <div style="font-size: 19px;">
+                <strong>Diplomaturas</strong>
+                <ul style="margin-top: 4px;">
+                  <li><span style="background: #FDEBCB; color: var(--navy); font-weight: 600; padding: 1px 6px; border-radius: 4px;">IA Aplicada (DIIAA)</span></li>
+                  <li>Procesamiento del Lenguaje Natural</li>
+                  <li>Visión por Computadora</li>
+                  <li>Aprendizaje por Refuerzo</li>
+                </ul>
+              </div>
+              <div style="font-size: 19px;">
+                <strong>Especialización y maestrías</strong>
+                <ul style="margin-top: 4px;">
+                  <li>Especialización en IA</li>
+                  <li>Maestría en IA</li>
+                  <li>Maestría en IA Embebida</li>
+                  <li>Maestría en Computación de Borde</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Otras áreas</h3>
+            <ul style="font-size: 19px;">
+              <li>Sistemas Embebidos</li>
+              <li>Internet de las Cosas</li>
+              <li>Microelectrónica</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="notes">
+          Somos UBA: títulos oficiales. Hoy la principal demanda está en IA y por eso nos concentramos en IA, pero
+          tenemos una sólida trayectoria en SE, IoT y microelectrónica. La DIIAA la presentamos en la siguiente slide.
+        </aside>
+      </section>
+
+
+      <!-- ========================= 3. DIIAA ========================= -->
+      <section>
+        <div class="kicker">02 · Para toda la empresa</div>
+        <h2>IA aplicada, sin necesidad de programar</h2>
+        <div class="grid" style="grid-template-columns: 1.3fr 1fr; margin-top: 30px; align-items: stretch;">
+          <div>
+            <ul style="font-size: 23px;">
+              <li><strong>Para cualquier perfil:</strong> gerentes, administración, comercial, producción, salud,
+                agro, legales...</li>
+              <li><strong>Formación universitaria:</strong> diplomatura de la UBA de 5 bimestres, con docentes de
+                la Facultad de Ingeniería.</li>
+              <li><strong>Aplicada al propio trabajo:</strong> cierra con un trabajo final sobre un caso de su
+                ámbito laboral.</li>
+              <li><strong>Compatible con la jornada:</strong> modalidad a distancia, clases de 19 a 22 h.</li>
+            </ul>
+            <div class="url">Más información<br><a href="https://lse-posgrados.fi.uba.ar/posgrados/diplomaturas/diiaa"
+                target="_blank">lse-posgrados.fi.uba.ar/posgrados/diplomaturas/diiaa</a></div>
+          </div>
+          <div class="card dark">
+            <h3>Recorrido</h3>
+            <div class="path">
+              <div><span>1</span>Fundamentos de inteligencia artificial</div>
+              <div><span>2</span>Análisis y preparación de datos</div>
+              <div><span>3</span>Visión por computadora</div>
+              <div><span>4</span>Procesamiento del lenguaje natural</div>
+              <div><span>5</span>Trabajo final aplicado</div>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">
+          Cualquier persona de la empresa puede cursarla. Enfatizar que no es un "cursito básico": es una
+          diplomatura UBA de 5 bimestres.
+        </aside>
+      </section>
+
+
+      <!-- ========================= 4. PROBLEMAS REALES ========================= -->
+      <section>
+        <div class="kicker">03 · Nuestra fortaleza</div>
+        <h2>Preparamos para resolver problemas reales</h2>
+        <p class="lead">Egresados <strong>"Plug &amp; Play"</strong>: aplican lo aprendido en la empresa desde el
+          primer día.</p>
+        <div class="grid g3">
+          <div class="card">
+            <span class="num">01</span>
+            <h3>Enfoque profesional</h3>
+            <p>Cada carrera está orientada a implementar soluciones, no solo a la teoría.</p>
+          </div>
+          <div class="card">
+            <span class="num">02</span>
+            <h3>Trabajo final aplicado</h3>
+            <p>Las materias se organizan alrededor de un proyecto real, con director, planificación y defensa
+              pública.</p>
+          </div>
+          <div class="card">
+            <span class="num">03</span>
+            <h3>Sin dejar de trabajar</h3>
+            <p>Modalidad a distancia, con clases de 19 a 22 h.</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Todo lo que hacemos está enfocado a la aplicación inmediata y directa. Muchas veces el alumno resuelve un
+          problema de su propia empresa en su trabajo final.
+        </aside>
+      </section>
+
+
+      <!-- ========================= 5. PROGRAMA DE VINCULACIÓN ========================= -->
+      <section>
+        <div class="kicker">04 · Programa de Vinculación</div>
+        <h2>Su empresa propone el problema, nuestros alumnos lo resuelven</h2>
+        <div class="flow">
+          <div class="step">
+            <div class="dot">1</div><strong>Propone</strong>La empresa presenta uno o más temas cada bimestre.
+          </div>
+          <div class="step">
+            <div class="dot">2</div><strong>Conoce</strong>Los alumnos interesados la contactan.
+          </div>
+          <div class="step">
+            <div class="dot">3</div><strong>Elige</strong>La empresa selecciona al candidato que mejor se ajusta.
+          </div>
+          <div class="step">
+            <div class="dot">4</div><strong>Recibe</strong>Una solución dirigida y evaluada por la UBA, con
+            seguimiento mensual.
+          </div>
+        </div>
+        <div style="margin-top: 34px;">
+          <p style="font-size: 18px; color: var(--muted); margin-bottom: 12px !important;">Ejemplos de trabajos
+            realizados (ver en FIUBA Conecta)</p>
+          <a class="chip" href="https://conecta-bibliotecadigital.fi.uba.ar/trabajos/aplicacion-de-modelo-de-vision-artificial-para-el-conteo-de-plantas-en-cultivos-de-arroz"
+            target="_blank">Conteo de plantas en cultivos de arroz ↗</a>
+          <a class="chip" href="https://conecta-bibliotecadigital.fi.uba.ar/trabajos/desarrollo-de-un-modelo-de-machine-learning-para-la-deteccion-temprana-de-perdida-auditiva"
+            target="_blank">Detección temprana de pérdida auditiva ↗</a>
+          <a class="chip" href="https://conecta-bibliotecadigital.fi.uba.ar/trabajos/deteccion-de-anomalias-en-simulaciones-digitales-de-circuitos-integrados"
+            target="_blank">Anomalías en simulaciones de circuitos integrados ↗</a>
+          <a class="chip" href="https://conecta-bibliotecadigital.fi.uba.ar/trabajos/sistema-de-monitoreo-remoto-de-temperatura-de-camaras-frigorificas"
+            target="_blank">Monitoreo de cámaras frigoríficas ↗</a>
+        </div>
+        <div class="url" style="margin-top: 14px;"><a
+            href="https://lse-posgrados.fi.uba.ar/trabajo-final/programa-de-vinculacion"
+            target="_blank">lse-posgrados.fi.uba.ar/trabajo-final/programa-de-vinculacion</a> · <a
+            href="mailto:programa.vinculacion.lse@fi.uba.ar">programa.vinculacion.lse@fi.uba.ar</a></div>
+        <aside class="notes">
+          En línea con lo que se presentó sobre la base de requerimientos. Además, a veces la relación termina en
+          una contratación.
+        </aside>
+      </section>
+
+
+      <!-- ========================= 6. FIUBA CONECTA ========================= -->
+      <section>
+        <div class="kicker">05 · FIUBA Conecta</div>
+        <h2>Encuentren a quien ya resolvió un problema como el suyo</h2>
+        <div class="grid" style="grid-template-columns: 1fr 1.35fr; margin-top: 28px; align-items: start;">
+          <div>
+            <div class="stat">403</div>
+            <p class="stat-label" style="font-size: 20px;">trabajos finales de posgrado disponibles</p>
+            <ul style="font-size: 21px; margin-top: 22px;">
+              <li>Asistente con IA: se le describe el problema y sugiere trabajos relacionados.</li>
+              <li>Filtros por tema, posgrado y año.</li>
+              <li>Contacto directo con los autores.</li>
+            </ul>
+            <div class="url" style="margin-top: 18px;"><a href="https://conecta-bibliotecadigital.fi.uba.ar/"
+                target="_blank">conecta-bibliotecadigital.fi.uba.ar</a></div>
+          </div>
+          <div style="position: relative; height: 430px;">
+            <img class="shot" src="images/conecta.png" alt="Página principal de FIUBA Conecta"
+              style="height: 330px; width: 88%;">
+            <a href="https://conecta-bibliotecadigital.fi.uba.ar/trabajos/desarrollo-de-un-modelo-de-machine-learning-para-la-deteccion-temprana-de-perdida-auditiva"
+              target="_blank"><img class="shot" src="images/conecta_trabajo.png"
+                alt="Ficha de un trabajo final en FIUBA Conecta"
+                style="position: absolute; right: 0; top: 150px; width: 70%; height: 270px;"></a>
+          </div>
+        </div>
+        <aside class="notes">
+          Lo desarrollamos para vincular a empresas con nuestros egresados. Ejemplo en pantalla: modelo de ML para
+          la detección temprana de pérdida auditiva en trabajadores expuestos a ruido (CEIA, 2025).
+        </aside>
+      </section>
+
+
+      <!-- ========================= 7. CURSOS A MEDIDA ========================= -->
+      <section>
+        <div class="kicker">06 · Capacitación in company</div>
+        <h2>Cursos a medida para su empresa</h2>
+        <p class="lead">Tenemos experiencia diseñando y dictando capacitaciones en IA para empresas.</p>
+        <div class="grid g3">
+          <div class="card">
+            <span class="num">01</span>
+            <h3>A su medida</h3>
+            <p>Contenidos y duración definidos junto con la empresa.</p>
+          </div>
+          <div class="card">
+            <span class="num">02</span>
+            <h3>Online o presencial</h3>
+            <p>Lo que mejor se adapte a cada equipo.</p>
+          </div>
+          <div class="card">
+            <span class="num">03</span>
+            <h3>Docentes UBA</h3>
+            <p>El mismo cuerpo docente y el mismo enfoque práctico de nuestros posgrados.</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Desde la sensibilización de equipos directivos hasta formación técnica específica.
+        </aside>
+      </section>
+
+
+      <!-- ========================= 8. CONTACTO ========================= -->
+      <section class="dark-slide" data-background-color="#0B1F3A">
+        <div class="kicker" style="color: var(--amber);">Contacto</div>
+        <h2 style="font-size: 54px;">¿Hablamos?</h2>
+        <div class="contact-row">
+          <div class="card">
+            <span class="num">Carreras e inscripción</span>
+            <p><a href="mailto:inscripcion.lse@fi.uba.ar" style="color: #fff;">inscripcion.lse@fi.uba.ar</a></p>
+          </div>
+          <div class="card">
+            <span class="num">Programa de Vinculación</span>
+            <p><a href="mailto:programa.vinculacion.lse@fi.uba.ar"
+                style="color: #fff;">programa.vinculacion.lse@fi.uba.ar</a></p>
+          </div>
+          <div class="card">
+            <span class="num">Coordinación Académica de IA</span>
+            <p><strong>Federico G. Zacchigna</strong><br><a href="mailto:coordinacion.academica.ia.lse@fi.uba.ar"
+                style="color: #fff; font-size: 17px;">coordinacion.academica.ia.lse@fi.uba.ar</a></p>
+          </div>
+          <div class="card">
+            <span class="num">Dirección</span>
+            <p><strong>Ariel Lutenberg</strong> · Director<br><a href="mailto:alutenb@fi.uba.ar"
+                style="color: #fff;">alutenb@fi.uba.ar</a></p>
+            <p style="margin-top: 8px !important;"><strong>Pablo Gomez</strong> · Codirector<br><a
+                href="mailto:pgomez@fi.uba.ar" style="color: #fff;">pgomez@fi.uba.ar</a></p>
+          </div>
+        </div>
+        <div class="links">
+          <div>Posgrados · <a href="https://lse-posgrados.fi.uba.ar/">lse-posgrados.fi.uba.ar</a></div>
+          <div>FIUBA Conecta · <a
+              href="https://conecta-bibliotecadigital.fi.uba.ar/">conecta-bibliotecadigital.fi.uba.ar</a></div>
+          <div>Vinculación · <a
+              href="https://lse-posgrados.fi.uba.ar/trabajo-final/programa-de-vinculacion">lse-posgrados.fi.uba.ar/…/programa-de-vinculacion</a></div>
+          <div>Instagram · <a href="https://www.instagram.com/lse.posgrados/">@lse.posgrados</a></div>
+        </div>
+        <div class="dark-logos"><img src="images/logo-fiuba.png" alt="FIUBA"><img src="images/LSE-logo.png"
+            alt="Laboratorio de Sistemas Embebidos"></div>
+        <aside class="notes">
+          El objetivo: que al menos una empresa nos contacte para conversar qué le podemos ofrecer.
+        </aside>
+      </section>
+
+
+    </div>
+  </div>
+
+  <!-- Pie con logos (se agrega a cada slide al exportar a PDF) -->
+  <template id="brandbar-tpl">
+    <div id="brandbar">
+      <div class="logos">
+        <img src="images/logo-fiuba.png" alt="FIUBA">
+        <img src="images/LSE-logo.png" alt="Laboratorio de Sistemas Embebidos">
+      </div>
+      <div style="padding-right: 60px;">lse-posgrados.fi.uba.ar</div>
+    </div>
+  </template>
+
+  <script src="reveal.js/dist/reveal.js"></script>
+  <script src="reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      center: false,
+      width: 1280,
+      height: 720,
+      margin: 0,
+      slideNumber: 'c/t',
+      controls: false,
+      transition: 'fade',
+      backgroundTransition: 'fade',
+      plugins: [RevealNotes]
+    });
+
+    // Pie con logos: una sola vez en pantalla, o en cada página al imprimir a PDF.
+    // Se oculta en carátula y contacto (slides oscuras).
+    var tpl = document.getElementById('brandbar-tpl');
+    if (window.location.search.match(/print-pdf/gi)) {
+      Reveal.on('ready', function () {
+        document.querySelectorAll('.pdf-page').forEach(function (page) {
+          if (!page.querySelector('section.dark-slide')) {
+            page.appendChild(tpl.content.cloneNode(true));
+          }
+        });
+      });
+    } else {
+      document.querySelector('.reveal').appendChild(tpl.content.cloneNode(true));
+      var bar = document.getElementById('brandbar');
+      var toggle = function (e) {
+        bar.style.display = e.currentSlide.classList.contains('dark-slide') ? 'none' : 'flex';
+      };
+      Reveal.on('ready', toggle);
+      Reveal.on('slidechanged', toggle);
+    }
+  </script>
+
+</body>
+
+</html>
