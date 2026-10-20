@@ -53,6 +53,16 @@
       box-sizing: border-box;
     }
 
+    /* reveal.js anula el padding al exportar a PDF (?print-pdf): se restaura */
+    html.reveal-print .reveal .slides section:not(.stack) {
+      padding: 56px 72px 0 72px !important;
+      height: 720px !important;
+    }
+
+    html.reveal-print .reveal .slides .pdf-page {
+      position: relative;
+    }
+
     .reveal h1,
     .reveal h2,
     .reveal h3 {
@@ -805,7 +815,7 @@
     // Se oculta en carátula y contacto (slides oscuras).
     var tpl = document.getElementById('brandbar-tpl');
     if (window.location.search.match(/print-pdf/gi)) {
-      Reveal.on('ready', function () {
+      Reveal.on('pdf-ready', function () {
         document.querySelectorAll('.pdf-page').forEach(function (page) {
           if (!page.querySelector('section.dark-slide')) {
             page.appendChild(tpl.content.cloneNode(true));
