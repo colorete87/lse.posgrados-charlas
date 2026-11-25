@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>Diplomatura en IA Aplicada (DIIAA) - LSE FIUBA - Zárate</title>
+  <title>Diplomatura en Aplicaciones de la IA - LSE FIUBA - Zárate</title>
 
   <link rel="stylesheet" href="reveal.js/dist/reset.css">
   <link rel="stylesheet" href="reveal.js/dist/reveal.css">
@@ -344,6 +344,41 @@
       break-inside: avoid;
     }
 
+    /* Programa resumido: ícono + frase */
+    .mod .card {
+      padding: 32px 30px;
+      font-size: 22px;
+    }
+
+    .mod .icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 20px;
+      background: #E3F3FA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+
+    .mod .icon svg {
+      width: 52px;
+      height: 52px;
+      fill: none;
+      stroke: var(--blue);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .mod .dark .icon {
+      background: var(--navy-2);
+    }
+
+    .mod .dark .icon svg {
+      stroke: var(--amber);
+    }
+
     /* Flujo del Programa de Vinculación */
     .flow {
       display: grid;
@@ -405,9 +440,9 @@
     }
 
     .cover-title {
-      font-size: 64px !important;
+      font-size: 56px !important;
       font-weight: 800;
-      max-width: 900px !important;
+      max-width: 1136px !important;
       margin-top: 64px !important;
     }
 
@@ -526,16 +561,16 @@
       <!-- ========================= 1. CARÁTULA ========================= -->
       <section class="dark-slide" data-background-color="#0B1F3A">
         <div class="kicker" style="color: var(--amber);">Municipio de Zárate</div>
-        <h1 class="cover-title">Diplomatura en Inteligencia Artificial Aplicada</h1>
+        <h1 class="cover-title">Diplomatura en Aplicaciones<br>de la Inteligencia Artificial:<br>Datos, Visión y Lenguaje</h1>
         <div class="rule"></div>
-        <p style="font-size: 26px; margin-top: 28px;">Posgrados del Laboratorio de Sistemas Embebidos<br>Facultad de
+        <p style="font-size: 26px; margin-top: 28px;">Laboratorio de Sistemas Embebidos<br>Facultad de
           Ingeniería · Universidad de Buenos Aires</p>
         <p style="font-size: 20px; margin-top: 40px;">Federico G. Zacchigna · Coordinación Académica de IA<br>25 de
           noviembre de 2026</p>
         <div class="dark-logos"><img src="images/logo-fiuba.png" alt="FIUBA"><img src="images/LSE-logo.png"
             alt="Laboratorio de Sistemas Embebidos"></div>
         <aside class="notes">
-          Presentación personal. Quiénes somos, qué nos diferencia y el plan de estudios de la DIIAA.
+          Presentación personal. Quiénes somos, qué nos diferencia y el plan de estudios de la diplomatura.
         </aside>
       </section>
 
@@ -543,7 +578,7 @@
       <!-- ========================= 2. QUIÉNES SOMOS ========================= -->
       <section>
         <div class="kicker">01 · Quiénes somos</div>
-        <h2 style="font-size: 42px;">El posgrado en IA más grande del país.</h2>
+        <h2 style="font-size: 42px;">La formación en IA más grande del país.</h2>
 
         <div class="grid g4 compact" style="margin-top: 26px;">
           <div class="card">
@@ -571,7 +606,7 @@
               <div style="font-size: 19px;">
                 <strong>Diplomaturas</strong>
                 <ul style="margin-top: 4px;">
-                  <li><span style="background: #FDEBCB; color: var(--navy); font-weight: 600; padding: 1px 6px; border-radius: 4px;">IA Aplicada (DIIAA)</span></li>
+                  <li><span style="background: #FDEBCB; color: var(--navy); font-weight: 600; padding: 1px 6px; border-radius: 4px;">Aplicaciones de la IA</span></li>
                   <li>Procesamiento del Lenguaje Natural</li>
                   <li>Visión por Computadora</li>
                   <li>Aprendizaje por Refuerzo</li>
@@ -600,7 +635,7 @@
         </div>
         <aside class="notes">
           Somos UBA: títulos oficiales. Hoy la principal demanda está en IA y por eso nos concentramos en IA, pero
-          tenemos una sólida trayectoria en SE, IoT y microelectrónica. La DIIAA la presentamos en un momento.
+          tenemos una sólida trayectoria en SE, IoT y microelectrónica. La diplomatura la presentamos en un momento.
         </aside>
       </section>
 
@@ -638,7 +673,7 @@
 
       <!-- ========================= 4. DIIAA ========================= -->
       <section>
-        <div class="kicker">03 · Para profesionales y técnicos de cualquier área</div>
+        <div class="kicker">03 · Para público en general, profesionales y técnicos de cualquier área</div>
         <h2 style="font-size: 40px;">IA aplicada, sin experiencia previa en programación</h2>
         <div class="grid" style="grid-template-columns: 1.2fr 1fr; margin-top: 28px; align-items: start;">
           <div>
@@ -658,26 +693,163 @@
           </div>
           <div class="card dark" style="padding: 22px 26px;">
             <div class="facts">
-              <div><span>Título</span>Diplomatura Universitaria Superior en Inteligencia Artificial Aplicada (UBA)</div>
+              <div><span>Título</span>Diplomatura de Extensión en Aplicaciones de la Inteligencia Artificial: Datos, Visión y Lenguaje (UBA)</div>
               <div><span>Duración</span>5 bimestres (10 meses)</div>
               <div><span>Cursada</span>3 h por semana, martes o miércoles de 19 a 22 h</div>
               <div><span>Modalidad</span>A distancia, clases en vivo por Google Meet</div>
-              <div><span>Ingreso</span>Título universitario o técnico superior</div>
-              <div><span>Aprobación</span>Consejo Superior de la UBA<br>RESCS-2025-636-E-UBA-REC</div>
+              <div><span>Requisitos de ingreso</span>Conocimientos básicos de informática y de herramientas digitales:
+                navegador, correo, procesador de texto y planillas de cálculo</div>
             </div>
           </div>
         </div>
         <aside class="notes">
-          No es un "cursito básico": es una diplomatura UBA de 5 bimestres, aprobada por el Consejo Superior el 14 de
-          mayo de 2025. No hace falta saber programar ni venir de ingeniería; alcanza con manejo básico de
+          No es un "cursito básico": es una diplomatura UBA de 5 bimestres. No hace falta saber programar ni venir de ingeniería; alcanza con manejo básico de
           herramientas digitales.
         </aside>
       </section>
 
 
-      <!-- ========================= 5. PROGRAMA DIIAA (BIMESTRES 1 A 3) ========================= -->
+      <!-- ========================= 5. PROGRAMA (BIMESTRES 1 A 3) ========================= -->
       <section>
-        <div class="kicker">04 · Programa de la DIIAA</div>
+        <div class="kicker">04 · Programa de la diplomatura</div>
+        <h2 style="font-size: 42px;">Plan de estudios: bimestres 1 a 3</h2>
+        <div class="grid g3 mod">
+          <div class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2.5"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.6 7.3 10 10.4M6.6 16.7 10 13.6M14 10.4l3.4-3.1M14 13.6l3.4 3.1"/></svg></div>
+            <span class="num">BIMESTRE 1</span>
+            <h3>Fundamentos de inteligencia artificial</h3>
+            <p>Qué es la IA y cómo usarla en el trabajo: copilots, modelos multimodales y open source, y ética.</p>
+          </div>
+          <div class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><rect x="5" y="12" width="3.4" height="6"/><rect x="10.3" y="8" width="3.4" height="10"/><rect x="15.6" y="4" width="3.4" height="14"/></svg></div>
+            <span class="num">BIMESTRE 2</span>
+            <h3>Análisis y preparación de datos</h3>
+            <p>Cómo preparar, explorar e interpretar datos, con bases de estadística.</p>
+          </div>
+          <div class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <span class="num">BIMESTRE 3</span>
+            <h3>Visión por computadora</h3>
+            <p>Cómo se interpretan imágenes con IA: redes neuronales, detección de objetos y segmentación.</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Arranca con las herramientas de uso inmediato (copilots, modelos multimodales, modelos open source), sigue
+          con los datos y llega a las aplicaciones sobre imágenes.
+        </aside>
+      </section>
+
+
+      <!-- ========================= 6. PROGRAMA (BIMESTRES 4 Y 5) ========================= -->
+      <section>
+        <div class="kicker">04 · Programa de la diplomatura</div>
+        <h2 style="font-size: 42px;">Plan de estudios: bimestres 4 y 5</h2>
+        <div class="grid mod" style="grid-template-columns: 1fr 1fr;">
+          <div class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.5a2 2 0 0 1-2 2H9l-5 4v-14a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/><path d="M8.5 9h8M8.5 12.5h5"/></svg></div>
+            <span class="num">BIMESTRE 4</span>
+            <h3>Procesamiento de lenguaje natural</h3>
+            <p>Cómo la IA entiende y genera texto: búsqueda semántica, clasificación de textos y modelos de lenguaje (LLM).</p>
+          </div>
+          <div class="card dark">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.8 10.6c.7.6 1.2 1.3 1.3 2.4h5c.1-1.1.6-1.8 1.3-2.4A6 6 0 0 0 12 3z"/></svg></div>
+            <span class="num" style="color: var(--amber);">BIMESTRE 5</span>
+            <h3>Taller de trabajo final</h3>
+            <p>Desarrollo y presentación de un proyecto completo de IA.</p>
+            <p style="font-size: 19px; margin-top: 16px !important;"><strong>Ejemplos de trabajos realizados</strong></p>
+            <ul style="font-size: 19px; margin-top: 6px;">
+              <li><a href="https://drive.google.com/file/d/1Ndsjbjs_kgW_y8s1iLOBDI2OHAfPhi1E/view"
+                  target="_blank" style="color: #7FD0F0;">Asistente de triaje de mails con RAG y LLM ↗</a></li>
+              <li><a href="https://drive.google.com/file/d/1GGTntnOt4HgbTgPRj1TPsTHNlmE5begv/view"
+                  target="_blank" style="color: #7FD0F0;">Asesor online de nutrición animal con RAG ↗</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="url" style="margin-top: 20px;">Contenido detallado · <a
+            href="https://lse-posgrados.fi.uba.ar/posgrados/diplomaturas/diiaa/cursos-diiaa" target="_blank"
+            style="font-size: 20px;">lse-posgrados.fi.uba.ar/posgrados/diplomaturas/diiaa/cursos-diiaa</a></div>
+        <aside class="notes">
+          PLN es la base de los asistentes y buscadores sobre documentos. En el taller cada alumno lleva un problema
+          de su ámbito.
+        </aside>
+      </section>
+
+
+      <!-- ========================= 7. CURSOS A MEDIDA ========================= -->
+      <section>
+        <div class="kicker">05 · Cursos a medida</div>
+        <h2>Cursos diseñados para cada organización</h2>
+        <p class="lead">Además de la diplomatura, diseñamos y dictamos cursos de IA según cada necesidad.</p>
+        <div class="grid g3">
+          <div class="card">
+            <span class="num">01</span>
+            <h3>A medida</h3>
+            <p>Contenidos, nivel y duración definidos en conjunto, según los objetivos de cada área.</p>
+          </div>
+          <div class="card">
+            <span class="num">02</span>
+            <h3>Online o presencial</h3>
+            <p>Lo que mejor se adapte a cada grupo.</p>
+          </div>
+          <div class="card">
+            <span class="num">03</span>
+            <h3>Docentes UBA</h3>
+            <p>El mismo cuerpo docente y el mismo enfoque práctico de nuestros posgrados.</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Desde la sensibilización de equipos directivos hasta formación técnica específica. Tenemos experiencia
+          diseñando y dictando capacitaciones en IA para empresas.
+        </aside>
+      </section>
+
+
+      <!-- ========================= 8. CIERRE Y CONTACTO ========================= -->
+      <section class="dark-slide" data-background-color="#0B1F3A">
+        <div class="kicker" style="color: var(--amber);">Contacto</div>
+        <h2 style="font-size: 54px;">¡Muchas gracias!</h2>
+        <div class="contact-row">
+          <div class="card">
+            <span class="num">Carreras e inscripción</span>
+            <p><a href="mailto:inscripcion.lse@fi.uba.ar" style="color: #fff;">inscripcion.lse@fi.uba.ar</a></p>
+          </div>
+          <div class="card">
+            <span class="num">Programa de Vinculación</span>
+            <p><a href="mailto:programa.vinculacion.lse@fi.uba.ar"
+                style="color: #fff;">programa.vinculacion.lse@fi.uba.ar</a></p>
+          </div>
+          <div class="card">
+            <span class="num">Coordinación Académica de IA</span>
+            <p><strong>Federico G. Zacchigna</strong><br><a href="mailto:coordinacion.academica.ia.lse@fi.uba.ar"
+                style="color: #fff; font-size: 17px;">coordinacion.academica.ia.lse@fi.uba.ar</a></p>
+          </div>
+          <div class="card">
+            <span class="num">Dirección</span>
+            <p><strong>Ariel Lutenberg</strong> · Director<br><a href="mailto:alutenb@fi.uba.ar"
+                style="color: #fff;">alutenb@fi.uba.ar</a></p>
+            <p style="margin-top: 8px !important;"><strong>Pablo Gomez</strong> · Codirector<br><a
+                href="mailto:pgomez@fi.uba.ar" style="color: #fff;">pgomez@fi.uba.ar</a></p>
+          </div>
+        </div>
+        <div class="links">
+          <div>Posgrados · <a href="https://lse-posgrados.fi.uba.ar/">lse-posgrados.fi.uba.ar</a></div>
+          <div>FIUBA Conecta · <a
+              href="https://conecta-bibliotecadigital.fi.uba.ar/">conecta-bibliotecadigital.fi.uba.ar</a></div>
+          <div>Diplomatura · <a
+              href="https://lse-posgrados.fi.uba.ar/posgrados/diplomaturas/diiaa">lse-posgrados.fi.uba.ar/…/diplomaturas/diiaa</a></div>
+          <div>Instagram · <a href="https://www.instagram.com/lse.posgrados/">@lse.posgrados</a></div>
+        </div>
+        <div class="dark-logos"><img src="images/logo-fiuba.png" alt="FIUBA"><img src="images/LSE-logo.png"
+            alt="Laboratorio de Sistemas Embebidos"></div>
+        <aside class="notes">
+          Después de esta slide viene solo material de back-up.
+        </aside>
+      </section>
+
+
+      <!-- ========================= BACK-UP: TEMARIO (BIMESTRES 1 A 3) (no se cuenta ni se muestra en principio) ========================= -->
+      <section data-visibility="uncounted">
+        <div class="kicker">Extra · Temario detallado</div>
         <h2 style="font-size: 42px;">Plan de estudios: bimestres 1 a 3</h2>
         <div class="grid g3 compact" style="margin-top: 26px;">
           <div class="card">
@@ -725,9 +897,9 @@
       </section>
 
 
-      <!-- ========================= 6. PROGRAMA DIIAA (BIMESTRES 4 Y 5) ========================= -->
-      <section>
-        <div class="kicker">04 · Programa de la DIIAA</div>
+      <!-- ========================= BACK-UP: TEMARIO (BIMESTRES 4 Y 5) (no se cuenta ni se muestra en principio) ========================= -->
+      <section data-visibility="uncounted">
+        <div class="kicker">Extra · Temario detallado</div>
         <h2 style="font-size: 42px;">Plan de estudios: bimestres 4 y 5</h2>
         <div class="grid compact" style="grid-template-columns: 1.85fr 1fr; margin-top: 26px;">
           <div class="card">
@@ -752,8 +924,10 @@
               herramientas y las plataformas vistas.</p>
             <p style="font-size: 19px; margin-top: 16px !important;"><strong>Ejemplos de trabajos realizados</strong></p>
             <ul style="font-size: 19px; margin-top: 6px;">
-              <li>Asistente de triaje de mails con RAG y LLM</li>
-              <li>Asesor online de nutrición animal con RAG</li>
+              <li><a href="https://drive.google.com/file/d/1Ndsjbjs_kgW_y8s1iLOBDI2OHAfPhi1E/view"
+                  target="_blank" style="color: #7FD0F0;">Asistente de triaje de mails con RAG y LLM ↗</a></li>
+              <li><a href="https://drive.google.com/file/d/1GGTntnOt4HgbTgPRj1TPsTHNlmE5begv/view"
+                  target="_blank" style="color: #7FD0F0;">Asesor online de nutrición animal con RAG ↗</a></li>
             </ul>
           </div>
         </div>
@@ -767,109 +941,9 @@
       </section>
 
 
-      <!-- ========================= 7. CURSOS A MEDIDA ========================= -->
-      <section>
-        <div class="kicker">05 · Cursos a medida</div>
-        <h2>Cursos diseñados para cada organización</h2>
-        <p class="lead">Además de la diplomatura, diseñamos y dictamos cursos de IA según cada necesidad.</p>
-        <div class="grid g3">
-          <div class="card">
-            <span class="num">01</span>
-            <h3>A medida</h3>
-            <p>Contenidos, nivel y duración definidos en conjunto, según los objetivos de cada área.</p>
-          </div>
-          <div class="card">
-            <span class="num">02</span>
-            <h3>Online o presencial</h3>
-            <p>Lo que mejor se adapte a cada grupo.</p>
-          </div>
-          <div class="card">
-            <span class="num">03</span>
-            <h3>Docentes UBA</h3>
-            <p>El mismo cuerpo docente y el mismo enfoque práctico de nuestros posgrados.</p>
-          </div>
-        </div>
-        <aside class="notes">
-          Desde la sensibilización de equipos directivos hasta formación técnica específica. Tenemos experiencia
-          diseñando y dictando capacitaciones en IA para empresas.
-        </aside>
-      </section>
-
-
-      <!-- ========================= 8. PRÓXIMOS PASOS ========================= -->
-      <section>
-        <div class="kicker">06 · Próximos pasos</div>
-        <h2>Una cohorte para Zárate</h2>
-        <p class="lead">Puntos para definir en conjunto.</p>
-        <div class="grid g3">
-          <div class="card">
-            <span class="num">01</span>
-            <h3>Destinatarios</h3>
-            <p>Personal municipal, empresas de la zona o comunidad en general.</p>
-          </div>
-          <div class="card">
-            <span class="num">02</span>
-            <h3>Cupo e ingreso</h3>
-            <p>Cantidad de participantes y requisitos de admisión.</p>
-          </div>
-          <div class="card">
-            <span class="num">03</span>
-            <h3>Inicio y cursada</h3>
-            <p>Fecha de inicio, días y horarios.</p>
-          </div>
-        </div>
-        <aside class="notes">
-          Cerrar con responsables y fechas para cada punto.
-        </aside>
-      </section>
-
-
-      <!-- ========================= 9. CIERRE Y CONTACTO ========================= -->
-      <section class="dark-slide" data-background-color="#0B1F3A">
-        <div class="kicker" style="color: var(--amber);">Contacto</div>
-        <h2 style="font-size: 54px;">¡Muchas gracias!</h2>
-        <div class="contact-row">
-          <div class="card">
-            <span class="num">Carreras e inscripción</span>
-            <p><a href="mailto:inscripcion.lse@fi.uba.ar" style="color: #fff;">inscripcion.lse@fi.uba.ar</a></p>
-          </div>
-          <div class="card">
-            <span class="num">Programa de Vinculación</span>
-            <p><a href="mailto:programa.vinculacion.lse@fi.uba.ar"
-                style="color: #fff;">programa.vinculacion.lse@fi.uba.ar</a></p>
-          </div>
-          <div class="card">
-            <span class="num">Coordinación Académica de IA</span>
-            <p><strong>Federico G. Zacchigna</strong><br><a href="mailto:coordinacion.academica.ia.lse@fi.uba.ar"
-                style="color: #fff; font-size: 17px;">coordinacion.academica.ia.lse@fi.uba.ar</a></p>
-          </div>
-          <div class="card">
-            <span class="num">Dirección</span>
-            <p><strong>Ariel Lutenberg</strong> · Director<br><a href="mailto:alutenb@fi.uba.ar"
-                style="color: #fff;">alutenb@fi.uba.ar</a></p>
-            <p style="margin-top: 8px !important;"><strong>Pablo Gomez</strong> · Codirector<br><a
-                href="mailto:pgomez@fi.uba.ar" style="color: #fff;">pgomez@fi.uba.ar</a></p>
-          </div>
-        </div>
-        <div class="links">
-          <div>Posgrados · <a href="https://lse-posgrados.fi.uba.ar/">lse-posgrados.fi.uba.ar</a></div>
-          <div>FIUBA Conecta · <a
-              href="https://conecta-bibliotecadigital.fi.uba.ar/">conecta-bibliotecadigital.fi.uba.ar</a></div>
-          <div>DIIAA · <a
-              href="https://lse-posgrados.fi.uba.ar/posgrados/diplomaturas/diiaa">lse-posgrados.fi.uba.ar/…/diplomaturas/diiaa</a></div>
-          <div>Instagram · <a href="https://www.instagram.com/lse.posgrados/">@lse.posgrados</a></div>
-        </div>
-        <div class="dark-logos"><img src="images/logo-fiuba.png" alt="FIUBA"><img src="images/LSE-logo.png"
-            alt="Laboratorio de Sistemas Embebidos"></div>
-        <aside class="notes">
-          Después de esta slide viene solo material de back-up.
-        </aside>
-      </section>
-
-
       <!-- ========================= BACK-UP: PROGRAMA DE VINCULACIÓN (no se cuenta ni se muestra en principio) ========================= -->
       <section data-visibility="uncounted">
-        <div class="kicker">Back-up · Programa de Vinculación</div>
+        <div class="kicker">Extra · Programa de Vinculación</div>
         <h2>Las empresas proponen el problema, nuestros alumnos lo resuelven</h2>
         <div class="flow">
           <div class="step">
@@ -911,7 +985,7 @@
 
       <!-- ========================= BACK-UP: FIUBA CONECTA (no se cuenta ni se muestra en principio) ========================= -->
       <section data-visibility="uncounted">
-        <div class="kicker">Back-up · FIUBA Conecta</div>
+        <div class="kicker">Extra · FIUBA Conecta</div>
         <h2>Encuentren a quien ya resolvió un problema como el suyo</h2>
         <div class="grid" style="grid-template-columns: 1fr 1.35fr; margin-top: 28px; align-items: start;">
           <div>
